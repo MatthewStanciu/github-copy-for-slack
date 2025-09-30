@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub Copy for Slack",
+  "description": "Adds a Copy for Slack button on GitHub pull request pages.",
+  "version": "1.0.0",
+  "permissions": ["clipboardWrite"],
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*/*/pull/*"],
+      "js": ["index.js"],
+      "css": ["style.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
+
