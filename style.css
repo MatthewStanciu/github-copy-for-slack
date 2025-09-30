@@ -1,0 +1,80 @@
+/* Button: mimic GitHub small secondary button */
+.arc-opened-btn {
+  /* layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  /* size matches small button */
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 6px;
+  box-sizing: border-box;
+
+  /* typography */
+  font: 500 12px/20px system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* colors via Primer variables (fallbacks included) */
+  color: var(--button-default-fgColor-rest, var(--fgColor-default, #c9d1d9));
+  background: var(--button-default-bgColor-rest, var(--control-bgColor-rest, #21262d));
+  border: 1px solid var(--button-default-borderColor-rest, var(--borderColor-default, #30363d));
+
+  /* interactions */
+  cursor: pointer;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    box-shadow 120ms ease,
+    color 120ms ease;
+}
+
+/* Hover */
+.arc-opened-btn:hover {
+  color: var(--button-default-fgColor-hover, var(--fgColor-default, #c9d1d9));
+  background: var(--button-default-bgColor-hover, #30363d);
+  border-color: var(--button-default-borderColor-hover, #8b949e);
+}
+
+/* Active */
+.arc-opened-btn:active {
+  background: var(--button-default-bgColor-active, #292e33);
+  border-color: var(--button-default-borderColor-active, #6e7681);
+}
+
+/* Focus ring (matches GitHub focus treatment) */
+.arc-opened-btn:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--focus-outlineColor, #1f6feb),
+    inset 0 0 0 1px var(--button-default-bgColor-rest, #21262d);
+}
+
+/* Optional: subtle disabled state if you ever need it */
+.arc-opened-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Toast styled to GitHub dark */
+.arc-opened-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%) translateY(6px);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font: 600 12px/1 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--fgColor-default, #c9d1d9);
+  background: var(--overlay-bgColor, #161b22);
+  border: 1px solid var(--borderColor-default, #30363d);
+  box-shadow: 0 8px 24px rgba(1, 4, 9, 0.4);
+  opacity: 0;
+  transition: opacity 150ms ease, transform 150ms ease;
+  z-index: 999999;
+}
+.arc-opened-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
