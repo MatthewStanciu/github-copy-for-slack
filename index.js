@@ -141,7 +141,7 @@
   function onKey(e) {
     const isMac = /Mac|iPhone|iPad/.test(navigator.platform);
     const meta = isMac ? e.metaKey : e.ctrlKey;
-    if (meta && e.shiftKey && (e.key === "Y" || e.key === "y")) {
+    if (meta && e.shiftKey && (e.key === "G" || e.key === "g")) {
       e.preventDefault();
       copyRich(buildPayload());
     }
